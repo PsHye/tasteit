@@ -1,0 +1,23 @@
+ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+}
+
+li {
+  display: inline;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  margin: 20px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 90px;
+  display: flex;
+  justify-content: left;
+}

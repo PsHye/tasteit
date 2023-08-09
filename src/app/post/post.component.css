@@ -1,0 +1,98 @@
+:root {
+	/* Theme */
+	--primary-color: #1662f3;
+	--light-color: #d0dffc;
+	--dark-color: #283b70;
+	--regular-font: 'Inter', sans-serif;
+}
+
+html{
+  background-color:  #283b70;
+}
+
+.list-posts{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.card {
+  background-color: #F4EEE0;
+  margin-left: 1%;
+  margin-bottom: 1%;
+  border-radius: 15px;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  transition: 0.2s;
+}
+
+.card:hover{
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.2) 0px 0px 10px 0px;
+  transition: 0.2s;
+}
+
+.rating{
+  font-size: 13px;
+  margin-top: -10px;
+  margin-bottom: -3px;
+}
+
+.card-image{
+  float: right;
+  width: 25%;
+  height: 25%;
+  margin: 2%;
+  border-radius: 15px;
+}
+
+.card-title{
+  font-size: 20px;
+}
+
+.card-content{
+  margin: 3%;
+  position:relative;
+}
+
+.card-paragraph{
+  font-size: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.tags{
+  margin-left: -40px;
+  margin-bottom: 10px;
+  list-style: none;
+  position: relative;
+  top: 100%;
+}
+
+.tag{
+  font-size: 13px;
+  display: inline;
+  margin-right: 5px;
+  color: #283b70;
+  border: 1px solid #d0dffc;
+  padding: .4rem 1rem .4rem 1rem;
+  border-radius: 100rem;
+}
+
+.tag:hover{
+  border: 1px solid rgba(200, 200, 200, 0);
+  background-color: #283b70;
+  color: #d0dffc
+}
+
+.timestamp{
+  position:relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: var(--regular-font);
+  font-size: 13px;
+  float:right;
+  color: #283b70;
+}
