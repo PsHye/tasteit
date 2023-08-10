@@ -1,50 +1,5 @@
-<div class="list-posts">
-  <div class="card">
-      <img src="https://media.istockphoto.com/id/160836693/photo/celebration.jpg?s=612x612&w=0&k=20&c=TEpNxE955P6EOSvL4ULwWVYs6F6ekGr4-7b2Z4CFCCk=" alt="Card Image" class="card-image">
-    <div class="card-content">
-      <h2 class="card-title">Argentinian Meat in Valencia</h2>
-      <p class="rating">5/5 ⭐</p>
-      <p class="card-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <ul class="tags">
-        <li class="tag">#meat</li>
-        <li class="tag">#arg</li>
-        <li class="tag">#restaurant</li>
-        <li class="timestamp">by <b class="author">Annahlel</b> 02/08/2023</li>
-      </ul>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://media.istockphoto.com/id/1060456922/photo/cheers-celebration-toast-with-pints-of-beer.jpg?s=612x612&w=0&k=20&c=GvLbeUOIfKJpel-dFke9Z3EQ26iSTLXidRSDjjws3LM=" alt="Card Image" class="card-image">
-    <div class="card-content">
-      <h2 class="card-title">Belgian Beers</h2>
-      <p class="rating">5/5 ⭐</p>
-      <p class="card-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <ul class="tags">
-        <li class="tag">#beer</li>
-        <li class="tag">#restaurant</li>
-        <li class="timestamp">by <b class="author">Sónico</b> at 01/08/2023</li>
-      </ul>
-    </div>
-  </div>
-  <div class="card">
-    <img src="https://www.foodandwine.com/thmb/ir1Mhc_qWGo4fWlj887-LzVc3_g=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/dessert-wines-what-to-know-FT-BLOG0122-3b0040474802467bb57ea6ee5e4acd92.jpg" alt="Card Image" class="card-image">
-    <div class="card-content">
-      <h2 class="card-title">Best Wines in Valencia</h2>
-      <p class="rating">5/5 ⭐</p>
-      <p class="card-paragraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <ul class="tags">
-        <li class="tag">#wine</li>
-        <li class="tag">#restaurant</li>
-        <li class="timestamp">by <b class="author">Annah</b> at 31/07/2023</li>
-      </ul>
-    </div>
-  </div>
+<div *ngIf="items$ | async as items">
+  <ul>
+    <li *ngFor="let item of items">{{ item | json }}</li>
+  </ul>
 </div>

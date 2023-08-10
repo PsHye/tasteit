@@ -1,6 +1,8 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { Observable } from 'rxjs';
+
 
 
 @Injectable({
@@ -13,15 +15,12 @@ import { Observable } from 'rxjs';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent {
-  private jsonUrl = '/docs/template-data.json';
-  jsonData: any = [];
+  items$: Observable<any[]>;
 
-  constructor(private httpClient: HttpClient) { }
-
-  getJsonData() {
-    this.httpClient.get(this.jsonUrl).subscribe(data =>{
-      console.log(data);
-      this.jsonData = data;
-    })
+  constructor(private db: AngularFireDatabase) {
+    // Replace 'items' with the path to the node you want to retrieve
+    this.items$ = db.list('posts').valueChanges();
   }
+
+
 }

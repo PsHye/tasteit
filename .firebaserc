@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tasteit-1c4e9": {
+      "hosting": {
+        "tasteit": [
+          "tasteit-1c4e9"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tasteit-1c4e9"
+  }
+}

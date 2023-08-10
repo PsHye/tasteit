@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [PostComponent],
   bootstrap: [AppComponent]
