@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireRemoteConfig, Parameter } from '@angular/fire/compat/remote-config';
 import { Observable } from 'rxjs';
+import { RemoteConfigService } from './services/remoteConfigService';
+import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
+
 
 @Component({
   selector: 'app-root',
@@ -9,25 +12,49 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
 
-  remoteConfig$: Observable<any> = new Observable<any>();
+  title = "App"
+  allParameters: Map<string, string> = new Map<string, string>();
 
-  remoteConfigParameters = new Map<string, string>();
+  homeSectionEnabled: boolean = false;
+  postsEnabled: boolean = false;
+  categoriesSection: boolean = false;
+  postRequestsEnabled: boolean = false;
 
-  constructor(private remoteConfig: AngularFireRemoteConfig) {}
+  websiteIsDown: boolean = false;
+  newsUpdateEnabled: boolean = false;
+  appVersion: string | undefined = "";
+  aboutSection: boolean = false;
 
-  async ngOnInit() {
-    try {
-      await this.remoteConfig.fetch();
-      const parameters = this.remoteConfig.parameters;
-      parameters.subscribe((data: Parameter[]) => {
-        data.forEach((item: Parameter) => {
-          this.remoteConfigParameters.set(item.key, item._value);
-        });
+  constructor(
+    private remoteConfigService: RemoteConfigService,
+    private analytics: AngularFireAnalytics
+    ) {}
 
-        console.log(this.remoteConfigParameters); // This will log the populated map
-      });
-    } catch (error) {
-      console.error('Error fetching remote configuration:', error);
-    }
+  ngOnInit() {
+    //this.analytics.logEvent('app_started', { version: '1.0.0' });
+    this.remoteConfigService.areParametersLoaded().subscribe(loaded => {
+      if (loaded) {
+        this.allParameters = this.remoteConfigService.getAllParameters();
+        console.log(this.allParameters);
+
+        const homeSectionEnabled = this.remoteConfigService.getParameterValue('home_section');
+        const postsEnabled = this.remoteConfigService.getParameterValue('post_section');
+        const categoriesSection = this.remoteConfigService.getParameterValue('categories_section');
+        const postRequestsValue = this.remoteConfigService.getParameterValue('post_requests');
+        const aboutSection = this.remoteConfigService.getParameterValue('about_section');
+        const websiteIsDown = this.remoteConfigService.getParameterValue('website_down');
+        const newsUpdateEnabled = this.remoteConfigService.getParameterValue('news_update');
+        const AppVersion = this.remoteConfigService.getParameterValue('app_version');
+
+        this.homeSectionEnabled = postRequestsValue === 'true';
+        this.postsEnabled = postRequestsValue === 'true';
+        this.categoriesSection = postRequestsValue === 'true';
+        this.postRequestsEnabled = postRequestsValue === 'true';
+        this.aboutSection = postRequestsValue === 'true';
+
+        this.appVersion = AppVersion
+      }
+    });
   }
 }
+

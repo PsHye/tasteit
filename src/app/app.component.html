@@ -1,3 +1,24 @@
 
-
+<nav>
+  <ul>
+    <ng-container *ngIf="homeSectionEnabled">
+      <button mat-button routerLink="/" color="primary">Home</button>
+    </ng-container>
+    <ng-container *ngIf="postRequestsEnabled">
+      <button mat-button routerLink="/posts" color="primary">Posts</button>
+    </ng-container>
+    <ng-container *ngIf="postRequestsEnabled">
+      <button mat-button routerLink="/categories" color="primary">Categories</button>
+    </ng-container>
+    <ng-container *ngIf="postRequestsEnabled">
+      <button mat-button routerLink="/request" color="primary">Request</button>
+    </ng-container>
+    <ng-container *ngIf="postRequestsEnabled">
+      <button mat-button routerLink="/about" color="primary">About</button>
+    </ng-container>
+  </ul>
+</nav>
 <router-outlet></router-outlet>
+<footer>
+  <p>Made with 💟 in Valencia v{{appVersion}} </p>
+</footer>
