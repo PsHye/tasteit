@@ -35,8 +35,6 @@ export class AppComponent implements OnInit {
     this.remoteConfigService.areParametersLoaded().subscribe(loaded => {
       if (loaded) {
         this.allParameters = this.remoteConfigService.getAllParameters();
-        console.log(this.allParameters);
-
         const homeSectionEnabled = this.remoteConfigService.getParameterValue('home_section');
         const postsEnabled = this.remoteConfigService.getParameterValue('post_section');
         const categoriesSection = this.remoteConfigService.getParameterValue('categories_section');

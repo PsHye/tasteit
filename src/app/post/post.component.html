@@ -1,5 +1,20 @@
-<div *ngIf="items$ | async as items">
-  <ul>
-    <li *ngFor="let item of items">{{ item | json }}</li>
-  </ul>
+<div *ngIf="items$ | async as items" class="cards-section">
+  <div class="card" *ngFor="let item of items">
+    <img class="thumbnail" src="https://via.placeholder.com/300x150" alt="Imagen de ejemplo">
+    <div class="title">{{item.title}}</div>
+    <div class="content">
+      {{item.content}}
+    </div>
+    <div class="rating">
+      <span>{{item.rating}}/5</span>
+      <div class="stars">
+        <span class="star">&#9733;</span>
+      </div>
+    </div>
+    <div class="date">{{item.timedate | date:'dd/MM/yyyy'}}</div>
+    <div class="tags">
+      <div class="tag" *ngFor="let tag of item.tags">#{{tag}}</div>
+    </div>
+    <button class="btn">See more ...</button>
+  </div>
 </div>

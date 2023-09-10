@@ -1,21 +1,22 @@
 
-<nav>
+<nav class="custom-navbar">
   <ul>
     <ng-container *ngIf="homeSectionEnabled">
-      <button mat-button routerLink="/" color="primary">Home</button>
+      <button mat-button routerLink="/">Home</button>
     </ng-container>
     <ng-container *ngIf="postRequestsEnabled">
-      <button mat-button routerLink="/posts" color="primary">Posts</button>
+      <button mat-button routerLink="/posts">Posts</button>
     </ng-container>
     <ng-container *ngIf="postRequestsEnabled">
-      <button mat-button routerLink="/categories" color="primary">Categories</button>
+      <button mat-button routerLink="/categories">Categories</button>
     </ng-container>
     <ng-container *ngIf="postRequestsEnabled">
-      <button mat-button routerLink="/request" color="primary">Request</button>
+      <button mat-button routerLink="/request">Request</button>
     </ng-container>
     <ng-container *ngIf="postRequestsEnabled">
-      <button mat-button routerLink="/about" color="primary">About</button>
+      <button mat-button routerLink="/about">About</button>
     </ng-container>
+    <img clas="navbar-logo" src="../favicon.ico" alt="logo-website">
   </ul>
 </nav>
 <router-outlet></router-outlet>
