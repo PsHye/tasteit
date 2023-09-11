@@ -1,6 +1,5 @@
-
-<nav class="custom-navbar">
-  <ul>
+<div class="nav-container">
+  <nav class="custom-navbar">
     <ng-container *ngIf="homeSectionEnabled">
       <button mat-button routerLink="/">Home</button>
     </ng-container>
@@ -17,9 +16,6 @@
       <button mat-button routerLink="/about">About</button>
     </ng-container>
     <img clas="navbar-logo" src="../favicon.ico" alt="logo-website">
-  </ul>
-</nav>
+  </nav>
+</div>
 <router-outlet></router-outlet>
-<footer>
-  <p>Made with 💟 in Valencia v{{appVersion}} </p>
-</footer>

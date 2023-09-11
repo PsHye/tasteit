@@ -9,22 +9,23 @@ footer {
   margin-left: 10px;
 }
 
+.nav-container{
+  padding: 10px;
+}
+
 nav{
   background-color: #27005D;
   font: var(--regular-font);
-  margin: 10px 10px 10px 10px;
   border-radius: 25px;
+  padding: 10px;
 }
+
 
 img{
   float: right;
   height: 38px;
   width: 38px;
   margin-right: 20px;
-}
-
-ul{
-  padding: 10px 10px 10px 30px;
 }
 
 button{

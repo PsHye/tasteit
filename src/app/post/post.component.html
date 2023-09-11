@@ -1,4 +1,4 @@
-<div *ngIf="items$ | async as items" class="cards-section">
+<div *ngIf="items$ | async as items; else loading" class="cards-section">
   <div class="card" *ngFor="let item of items">
     <img class="thumbnail" src="https://via.placeholder.com/300x150" alt="Imagen de ejemplo">
     <div class="title">{{item.title}}</div>
@@ -18,3 +18,7 @@
     <button class="btn">See more ...</button>
   </div>
 </div>
+<ng-template #loading>
+  <span class="loader"></span>
+</ng-template>
+

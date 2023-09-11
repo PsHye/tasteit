@@ -11,9 +11,13 @@
   font: var(--regular-font);
 }
 
-.cards-section{
+.cards-section, .loader{
   display: flex;
-  height: 88vh;
+}
+
+.loader {
+  height: 200px;
+  margin-left: 50%;
 }
 
 .card {
@@ -69,8 +73,8 @@
 }
 
 .tag {
-  background-color: var(--primary-color);
-  color: var(--primary-color);
+  background-color: #27005D;
+  color: whitesmoke;
   border-radius: 20px;
   padding: 5px 10px;
   margin-right: 5px;
@@ -90,5 +94,31 @@
 
 .btn:hover{
   background-color: #9400FF;
-
 }
+
+
+/* LOADER */
+
+.loader {
+  width: 32px;
+  height: 72px;
+  display: inline-block;
+  left: 5px;
+  position: relative;
+  border: 2px solid #27005D;
+  box-sizing: border-box;
+  animation: animloader 2s linear infinite alternate;
+  color: #9400FF;
+  border-radius: 0 0 4px 4px;
+  transform: perspective(140px) rotateX(-45deg);
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 0 0  inset;
+  }
+  100% {
+    box-shadow: 0 -70px inset;
+  }
+}
+

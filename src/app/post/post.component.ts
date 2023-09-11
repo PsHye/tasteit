@@ -1,7 +1,6 @@
 import { Component, Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { Observable } from 'rxjs';
+import { Observable, delay } from 'rxjs';
 
 
 
@@ -21,6 +20,4 @@ export class PostComponent {
     // Replace 'items' with the path to the node you want to retrieve
     this.items$ = db.list('posts').valueChanges();
   }
-
-
 }
